@@ -10,12 +10,11 @@ body{
 .container {
     position:absolute;
     width: 50%;
-    height: 29%;
+    height: 50%;
     background-color: rgba(37,40,54,1); /* Couleur de fond du rectangle */
     border-radius: 20px; /* Rayon des coins arrondis */
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
+    vertical-align: center;
+    transform:translate(-50%, 50%);
 }
 
 .title{
