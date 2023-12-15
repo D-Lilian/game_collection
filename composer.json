@@ -1,0 +1,15 @@
+{
+    "name": "i2202003/game_collection",
+    "autoload": {
+        "psr-4": {
+            "I2202003\\GameCollection\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JDjudgedead",
+            "email": "88926501+JDjudgedead4@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
