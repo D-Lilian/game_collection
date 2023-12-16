@@ -4,9 +4,50 @@
     bottom: 0;
     left: 30%;
     right: 30%;
-
     color: rgba(255,255,255,1);
     font-family: Barlow;
     text-align: center;
     text-decoration: none;
+}
+
+h1, p, input, button, a{
+    color: rgba(255,255,255,1);
+    font-family: Barlow;
+    text-decoration: none;
+}
+
+.logo{
+    width: 100px;
+    width: 70px;
+  }
+
+.header {
+    padding: 20px 0px 20px 0px;
+    width: 100%;
+}
+  
+.header a {
+    float: left;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 4px;
+    color: rgba(255,255,255,1);
+    font-family: Barlow;
+    text-align: center;
+    text-decoration: none;
+}
+  
+.header a:hover{
+    background-color: rgba(43,47,64,0.5);
+    color: black;
+    border-radius: 20px;
+}
+
+.header img:hover {
+    background-color: rgba(43,47,64,0.5);
+    border-radius: 20px;
+}
+  
+.header-right {
+    float: right;
 }
