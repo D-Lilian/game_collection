@@ -40,7 +40,7 @@ body, ul {
 }
 
 .container {
-    padding-top: 5%;
+    padding-top: 4%;
     display: flex;
     flex-wrap: wrap;
     max-width: 75%;
@@ -49,6 +49,7 @@ body, ul {
 
 
 .boxcontainer {
+    margin-top: 3%;
     position: relative;
     width: 400px; /* Largeur du rectangle */
     height: 300px; /* Hauteur du rectangle */
@@ -104,6 +105,21 @@ body, ul {
     flex-wrap: wrap;
   }
   .row>* {
+    margin-left: 50px;
     margin-bottom: 50px;
-    flex: 1 1 160px;
+    flex: 1 1 auto;
   }
+
+.myGames{
+    padding-top: 2%;
+    padding-left: 12.5%;
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    font-size: 15px;
+    color: rgba(255,255,255,1);
+    font-family: Barlow;
+    text-decoration: none;
+    font-weight: 300;
+}

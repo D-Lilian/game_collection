@@ -16,8 +16,10 @@
         <br>PRÊT A AJOUTER DES
         <br>JEUX A TA COLLECTION ?</div>
     </div>
-
     <div>
+        <div class="myGames">
+            <h1>Mes jeux</h1>
+        </div>
         <div>
 		    <div class="container">
                 <div class="row">
