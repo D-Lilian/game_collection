@@ -30,6 +30,7 @@ h1, p, input, button, a{
 .header a {
     float: left;
     padding: 12px;
+    margin-top: 2%;
     font-size: 18px;
     border-radius: 4px;
     color: rgba(255,255,255,1);
