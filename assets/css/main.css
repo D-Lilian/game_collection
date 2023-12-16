@@ -1,9 +1,4 @@
 .footer{
-    vertical-align: bottom;
-    position: absolute; 
-    bottom: 0;
-    left: 30%;
-    right: 30%;
     color: rgba(255,255,255,1);
     font-family: Barlow;
     text-align: center;
@@ -14,6 +9,8 @@ h1, p, input, button, a{
     color: rgba(255,255,255,1);
     font-family: Barlow;
     text-decoration: none;
+    opacity: 100%;
+    margin: 0;
 }
 
 .logo{
