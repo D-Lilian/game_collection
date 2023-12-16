@@ -64,16 +64,3 @@ h1, p, input, button, a{
     text-align: left;
     text-decoration: none;
 }
-
-.footer{
-    vertical-align: bottom;
-    position: absolute; 
-    bottom: 0;
-    left: 30%;
-    right: 30%;
-
-    color: rgba(255,255,255,1);
-    font-family: Barlow;
-    text-align: center;
-    text-decoration: none;
-}

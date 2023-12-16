@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.00, user-scalable=yes" />
         <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="./assets/css/login.css" />
+        <link rel="stylesheet" href="./assets/css/main.css" />
 	</head>
     <body>
         <form method="post">
