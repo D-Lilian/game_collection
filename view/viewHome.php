@@ -10,8 +10,84 @@
 	</head>
     <body> 
     <?php require('./assets/header.php'); ?>
+    <div class="banner">
+        <br>
+        <div class="nonBanner">SALUT MACHIN
+        <br>PRÊT A AJOUTER DES
+        <br>JEUX A TA COLLECTION ?</div>
+    </div>
+
     <div>
-        <p>hello</p>
+        <div>
+		    <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <!-- Box -->
+		    			<section>
+                            <div class="boxcontainer">
+                                <div class="content">
+                                    <div class="text">
+                                        <h2>name of the game</h2>
+                                        <div>
+                                            <p class="platform">Pc, Xbox serie X, Xbox serie S, Sbox one, Playstation 4, Playstation 5, Nintendo Switch, Android phone, IOS phone</p>
+                                            <p class="hours">6666H</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+		    			</section>
+                    </div>
+                    <div class="col-4">
+                        <!-- Box -->
+		    			<section>
+                            <div class="boxcontainer">
+                                <div class="content">
+                                    <div class="text">
+                                        <h2>name of the game</h2>
+                                        <div>
+                                            <p class="platform">Pc, Xbox serie X, Xbox serie S, Sbox one, Playstation 4, Playstation 5, Nintendo Switch, Android phone, IOS phone</p>
+                                            <p class="hours">6666H</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+		    			</section>
+                    </div>
+                    <div class="col-4">
+                        <!-- Box -->
+		    			<section>
+                            <div class="boxcontainer">
+                                <div class="content">
+                                    <div class="text">
+                                        <h2>name of the game</h2>
+                                        <div>
+                                            <p class="platform">Pc, Xbox serie X, Xbox serie S, Sbox one, Playstation 4, Playstation 5, Nintendo Switch, Android phone, IOS phone</p>
+                                            <p class="hours">6666H</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+		    			</section>
+                    </div>
+                    <div class="col-4">
+                        <!-- Box -->
+		    			<section>
+                            <div class="boxcontainer">
+                                <div class="content">
+                                    <div class="text">
+                                        <h2>name of the game</h2>
+                                        <div>
+                                            <p class="platform">Pc, Xbox serie X, Xbox serie S, Sbox one, Playstation 4, Playstation 5, Nintendo Switch, Android phone, IOS phone</p>
+                                            <p class="hours">6666H</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+		    			</section>
+                    </div>
+		    	</div>
+		    </div>
+	    </div>
     </div>
     <?php require('./assets/footer.php'); ?>
     </body>
