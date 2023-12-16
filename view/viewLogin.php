@@ -18,7 +18,7 @@
                 <input class="text" type="password" name="password" >
                 <button class="button" type="submit">SE CONNECTER</button>
                 <br>
-                <a href="./assets/register.php" class="register">S'inscrire</a>
+                <a href="../view/viewRegister.php" class="register">S'inscrire</a>
             </div>
         </form>
         <?php require('./assets/footer.php'); ?>
