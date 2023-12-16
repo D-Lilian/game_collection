@@ -19,6 +19,7 @@ h1, p, input, button, a{
 .logo{
     width: 100px;
     width: 70px;
+    margin-left: 30px;
   }
 
 .header {
@@ -50,4 +51,8 @@ h1, p, input, button, a{
   
 .header-right {
     float: right;
+}
+
+a{
+    margin-right: 10px;
 }
