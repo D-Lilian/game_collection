@@ -49,11 +49,10 @@ body, ul {
 
 
 .boxcontainer {
-    margin-top: 3%;
     position: relative;
-    width: 400px; /* Largeur du rectangle */
-    height: 350px; /* Hauteur du rectangle */
-    border-radius: 40px; /* Coins arrondis */
+    width: 450px; /* Largeur du rectangle */
+    height: 400px; /* Hauteur du rectangle */
+    border-radius: 15px; /* Coins arrondis */
     background-image: url('../pictures/home_picture.png'); /* Image d'arrière-plan */
     background-size: cover;
     overflow: hidden;
@@ -103,12 +102,12 @@ body, ul {
 .row {
     display: flex;
     flex-wrap: wrap;
-  }
-  .row>* {
-    margin-left: 2%;
+}
+
+.row>* {
     margin-bottom: 2%;
-    flex: 1 1 auto;
-  }
+    flex: 1 1 33%;
+}
 
 .myGames{
     padding-top: 2%;
@@ -122,4 +121,12 @@ body, ul {
     font-family: Barlow;
     text-decoration: none;
     font-weight: 300;
+}
+
+.box{
+  width: 33.333%;
+}
+
+section{
+  width: 33.333%;
 }
