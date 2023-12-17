@@ -52,7 +52,7 @@ body, ul {
     margin-top: 3%;
     position: relative;
     width: 400px; /* Largeur du rectangle */
-    height: 300px; /* Hauteur du rectangle */
+    height: 350px; /* Hauteur du rectangle */
     border-radius: 40px; /* Coins arrondis */
     background-image: url('../pictures/home_picture.png'); /* Image d'arrière-plan */
     background-size: cover;
@@ -105,8 +105,8 @@ body, ul {
     flex-wrap: wrap;
   }
   .row>* {
-    margin-left: 50px;
-    margin-bottom: 50px;
+    margin-left: 2%;
+    margin-bottom: 2%;
     flex: 1 1 auto;
   }
 
