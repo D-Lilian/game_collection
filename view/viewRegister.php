@@ -15,9 +15,9 @@
             <p class="info">Nom :</p>
             <input class="text" type="text" name="lastName" value="<?php echo $_ENV["LastName"] ?>">
             <p class="info">Prénom :</p>
-            <input class="text" type="text" name="firstName" value="<?php echo $_ENV["$FirstName"] ?>">
+            <input class="text" type="text" name="firstName" value="<?php echo $_ENV["FirstName"] ?>">
             <p class="info">Email :</p>
-            <input class="text" type="text" name="email" value="<?php echo $_ENV["$mail"] ?>">
+            <input class="text" type="text" name="email" value="<?php echo $_ENV["mail"] ?>">
             <p class="info">Mot de passe :</p>
             <input class="text" type="password" name="password" value="">
             <p class="info">Confirmation du mot de passe :</p>

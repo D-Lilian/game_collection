@@ -6,6 +6,6 @@ require('./vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-require('./view/viewHome.php');
+require('./view/viewRegister.php');
 
 ?>
