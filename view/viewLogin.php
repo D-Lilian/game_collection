@@ -9,9 +9,9 @@
         <link rel="stylesheet" href="./assets/css/main.css" />
 	</head>
     <body>
-        <form method="post">
-            <div class="container">
-                <h1 class="title">Se connecter a Game Collection</h1>
+        <div class="flex-container">
+            <form method="post" class="container">
+                <h1 class="title">Se connecter à Game Collection</h1>
                 <p class="info">Email :</p>
                 <input class="text" type="text" name="email" >
                 <p class="info">Mot de passe :</p>
@@ -19,8 +19,9 @@
                 <button class="button" type="submit">SE CONNECTER</button>
                 <br>
                 <a href="../view/viewRegister.php" class="register">S'inscrire</a>
-            </div>
-        </form>
+            </form>
+        </div>
         <?php require('./assets/footer.php'); ?>
     </body>
+    
 </html>
