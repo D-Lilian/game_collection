@@ -27,9 +27,9 @@
             <h1>Mes jeux</h1>
         </div>
         <div>
-		    <div class="container">
+            <div class="container">
                 <div class="row">
-                    <div class="box">
+                    <div class="col-4">
                         <section>
                         <!-- Box -->
                             <div class="boxcontainer">
@@ -45,7 +45,6 @@
                             </div>
                         </section>
                     </div>
-                    <div class="box"></div>
 		    	</div>
 		    </div>
 	    </div>

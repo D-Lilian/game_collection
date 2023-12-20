@@ -101,13 +101,27 @@ body, ul {
   }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0%;
 }
 
-.row>* {
-    margin-bottom: 2%;
-    flex: 1 1 33%;
+.col-4 {
+  margin-bottom: 2%;
+  margin-right: 20px;
+  flex: 0 0 calc(33.333% - 2%);
+}
+
+@media (max-width: 992px) {
+  .col-4:nth-child(2n) {
+      flex-basis: calc(50% - 2%);
+  }
+}
+
+@media (max-width: 668px) {
+  .col-4 {
+      flex-basis: calc(100% - 2%);
+  }
 }
 
 .myGames{
