@@ -13,9 +13,9 @@
             <form method="post" class="container">
                 <h1 class="title">Se connecter à Game Collection</h1>
                 <p class="info">Email :</p>
-                <input class="text" type="text" name="email" >
+                <input class="text" type="text" name="email" minlength=1 maxlength=500>
                 <p class="info">Mot de passe :</p>
-                <input class="text" type="password" name="password" >
+                <input class="text" type="password" name="password" minlength=1 maxlength=100>
                 <button class="button" type="submit">SE CONNECTER</button>
                 <br>
                 <a href="../view/viewRegister.php" class="register">S'inscrire</a>

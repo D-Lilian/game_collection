@@ -13,15 +13,15 @@
         <form method="post" class="container">
             <h1 class="title">Inscritption</h1>
             <p class="info">Nom :</p>
-            <input class="text" type="text" name="lastName" value="<?php echo $_ENV["LastName"] ?>">
+            <input class="text" type="text" name="lastName" value="<?php echo $_ENV["LastName"] ?>" minlength=1 maxlength=100>
             <p class="info">Prénom :</p>
-            <input class="text" type="text" name="firstName" value="<?php echo $_ENV["FirstName"] ?>">
+            <input class="text" type="text" name="firstName" value="<?php echo $_ENV["FirstName"] ?>" minlength=1 maxlength=100>
             <p class="info">Email :</p>
-            <input class="text" type="text" name="email" value="<?php echo $_ENV["mail"] ?>">
+            <input class="text" type="text" name="email" value="<?php echo $_ENV["mail"] ?>" minlength=1 maxlength=500>
             <p class="info">Mot de passe :</p>
-            <input class="text" type="password" name="password" value="">
+            <input class="text" type="password" name="password" value="" minlength=1 maxlength=100>
             <p class="info">Confirmation du mot de passe :</p>
-            <input class="text" type="password" name="confPassword" value="">
+            <input class="text" type="password" name="confPassword" value="" minlength=1 maxlength=100>
             <button class="button" type="submit">S'inscrire</button>
             <br>
             <a href="./view/viewLogin.php" class="register">Se connecter</a>
