@@ -27,7 +27,7 @@ body, ul {
     border-radius: 5px;
 }
 
-.button, .delete, .disconnect, .uppdate{
+.button, .delete, .disconnect, .update{
     display: block;
     padding-bottom: 10px;
     padding-top: 10px;
