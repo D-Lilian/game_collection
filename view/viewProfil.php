@@ -23,7 +23,7 @@
                 <input class="text" type="password" name="password" value="" minlength=1 maxlength=100>
                 <p class="info">Confirmation du mot de passe :</p>
                 <input class="text" type="password" name="confPassword" value="" minlength=1 maxlength=100>
-                <button class="uppdate" type="submit">MODIFIER</button>
+                <button class="update" type="submit">MODIFIER</button>
                 <button class="disconnect" type="submit">SE DÉCONNECTER</button>
                 <button class="delete" type="submit">SUPPRIMER MON COMPTE</button>
             </form>
