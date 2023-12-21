@@ -1,5 +1,6 @@
-body, ul {
-    background: rgba(33,31,42,1);
+body,
+ul {
+    background: rgba(33, 31, 42, 1);
     overflow: auto;
     margin: 0;
 }
@@ -8,7 +9,7 @@ body, ul {
     padding-left: 7%;
     padding-right: 7%;
     width: auto;
-    flex-grow: 1; /* Permet au flex-container de prendre tout l'espace disponible */
+    flex-grow: 1;
 }
 
 .info {
@@ -21,42 +22,46 @@ body, ul {
     margin-bottom: 1%;
     width: 30%;
     height: 8%;
-    background: rgba(43,47,64,1);
+    background: rgba(43, 47, 64, 1);
     border-color: transparent;
     font-size: 16px;
     border-radius: 5px;
 }
 
-.button, .delete, .disconnect, .update{
+.button,
+.delete,
+.disconnect,
+.update {
     display: block;
     padding-bottom: 10px;
     padding-top: 10px;
     margin-bottom: 1%;
     width: 7%;
     height: 10%;
-    background: rgba(103,87,214,1);
+    background: rgba(103, 87, 214, 1);
     border-radius: 10px;
     border-color: transparent;
     text-align: center;
 }
 
-h1, h3{
+h1,
+h3 {
     padding-bottom: 20px;
 }
 
-form{
+form {
     margin-bottom: 5%
 }
 
-.update{
+.update {
     width: 5%;
 }
 
-.disconnect{
+.disconnect {
     width: 8%;
     margin-bottom: 2%;
 }
 
-.delete{
+.delete {
     width: 10%;
 }

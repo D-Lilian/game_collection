@@ -1,56 +1,63 @@
-.footer{
-    color: rgba(255,255,255,1);
+.footer {
+    color: rgba(255, 255, 255, 1);
     font-family: Barlow;
     text-align: center;
     text-decoration: none;
 }
 
-h1, h2, h3, p, input, button, a, td{
-    color: rgba(255,255,255,1);
+h1,
+h2,
+h3,
+p,
+input,
+button,
+a,
+td {
+    color: rgba(255, 255, 255, 1);
     font-family: Barlow;
     text-decoration: none;
     opacity: 100%;
     margin: 0;
 }
 
-.logo{
+.logo {
     width: 100px;
     width: 70px;
     margin-left: 30px;
-  }
+}
 
 .header {
     padding: 20px 0px 20px 0px;
     width: 100%;
 }
-  
+
 .header a {
     float: left;
     padding: 12px;
     margin-top: 2%;
     font-size: 18px;
     border-radius: 4px;
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     font-family: Barlow;
     text-align: center;
     text-decoration: none;
 }
-  
-.header a:hover{
-    background-color: rgba(43,47,64,0.5);
+
+.header a:hover {
+    background-color: rgba(43, 47, 64, 0.5);
     color: black;
     border-radius: 20px;
 }
 
 .header img:hover {
-    background-color: rgba(43,47,64,0.5);
+    background-color: rgba(43, 47, 64, 0.5);
     border-radius: 20px;
 }
-  
+
 .header-right {
     float: right;
 }
 
-a{
+a {
     margin-right: 10px;
 }
