@@ -5,7 +5,7 @@
     text-decoration: none;
 }
 
-h1, h3, p, input, button, a{
+h1, h3, p, input, button, a, td{
     color: rgba(255,255,255,1);
     font-family: Barlow;
     text-decoration: none;
