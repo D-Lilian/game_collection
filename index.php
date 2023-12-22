@@ -14,5 +14,9 @@ if($_GET['page'] === 'login'){
     require('./controller/controllerLogin.php');
 }
 
+if($_GET['page'] === 'home'){
+    require('./view/viewHome.php');
+}
+
 
 ?>
