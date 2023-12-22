@@ -1,10 +1,18 @@
 <?php
-require("vendor/autoload.php");
-
 require('./vendor/autoload.php');
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-require('./view/viewRegister.php');
+var_dump($_GET);
+
+if($_GET['page'] === 'register'){
+    require('./controller/controllerRegister.php');
+}
+
+if($_GET['page'] === 'login'){
+    require('./controller/controllerLogin.php');
+}
+
+
 ?>
