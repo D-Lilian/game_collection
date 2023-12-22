@@ -4,8 +4,6 @@ require('./vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-var_dump($_GET);
-
 if($_GET['page'] === 'register'){
     require('./controller/controllerRegister.php');
 }
@@ -15,8 +13,27 @@ if($_GET['page'] === 'login'){
 }
 
 if($_GET['page'] === 'home'){
-    require('./view/viewHome.php');
+    require('./controller/controllerHome.php');
 }
 
+if($_GET['page'] === 'add'){
+    require('./controller/controllerAdding.php');
+}
+
+if($_GET['page'] === 'addgame'){
+    require('./controller/controllerAddingForm.php');
+}
+
+if($_GET['page'] === 'user'){
+    require('./controller/controllerUser.php');
+}
+
+if($_GET['page'] === 'update'){
+    require('./controller/controllerUpdate.php');
+}
+
+if($_GET['page'] === 'leaderboard'){
+    require('./controller/controllerLeaderboard.php');
+}
 
 ?>
