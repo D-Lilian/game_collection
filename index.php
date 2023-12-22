@@ -4,6 +4,8 @@ require('./vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+var_dump($_GET);
+
 if($_GET['page'] === 'register'){
     require('./controller/controllerRegister.php');
 }
