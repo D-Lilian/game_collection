@@ -58,4 +58,11 @@ function insertNewGame($name,$editor,$plateform, $dateOfRelease, $description, $
     $insertNewGameCommande = "INSERT INTO JEU(Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu) VALUES ($name,$editor,$plateform, $dateOfRelease, $description, $gamePictureUrl, $gameWebsiteUrl);";
     $bdd->query($insertNewGameCommande);
 }
+
+function insertLinkGamePlayer($emailPlayer,$idGame){
+    $bdd = dbConnect();
+    $insertNewGameCommande = "INSERT INTO COLLECTION VALUES ('$emailPlayer',".intval($idGame).",4,1);";
+    print($insertNewGameCommande);
+    $bdd->query($insertNewGameCommande);
+}
 ?>

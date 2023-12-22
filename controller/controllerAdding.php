@@ -12,7 +12,7 @@ else{
 
 //add a new game, add it
 if (isset($_POST["idOfGame"])){
-    //insert...
+    insertLinkGamePlayer("liliane.daura@tg.com",$_POST["idOfGame"]);
     header('Location: home');
     exit();
 }
