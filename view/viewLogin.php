@@ -15,7 +15,8 @@
         <form method="post" class="container">
             <h1 class="title">Se connecter à Game Collection</h1>
             <p class="info">Email :</p>
-            <input class="text" type="text" name="email" minlength=1 maxlength=500>
+            <input class="text" type="text" name="email" values="<?php if (isset($_SESSION['Mail_Uti'])) { echo $_SESSION["Mail_Uti"]; }?>
+                "minlength=1 maxlength=500>
             <p class="info">Mot de passe :</p>
             <input class="text" type="password" name="password" minlength=1 maxlength=100>
             <button class="button" type="submit">SE CONNECTER</button>
