@@ -14,7 +14,7 @@
     <?php require('./assets/header.php'); ?>
     <div class="banner">
         <br>
-        <div class="nonBanner">SALUT MACHIN
+        <div class="nonBanner">SALUT <?php echo $_SESSION['Mail_Uti'] ?>
             <br>PRÊT A AJOUTER DES
             <br>JEUX A TA COLLECTION ?
         </div>

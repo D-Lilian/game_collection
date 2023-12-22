@@ -25,6 +25,7 @@
             <p class="info">Confirmation du mot de passe :</p>
             <input class="text" type="password" name="confPassword" value="" minlength=1 maxlength=100>
             <button class="button" type="submit">S'inscrire</button>
+            <a href="login" class="register">Se connecter</a>
             <br>
         </form>
     </div>
