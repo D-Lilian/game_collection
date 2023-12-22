@@ -31,9 +31,9 @@
         <div>
             <div class="container">
                 <div class="row">
+                    <!-- Box -->
                     <div class="col-4">
                         <section>
-                            <!-- Box -->
                             <div class="boxcontainer">
                                 <div class="content">
                                     <div class="text">
