@@ -45,6 +45,9 @@ function getGamerInformation($emailGamer){
 }
 
 
-
-
+function insertNewGame($name,$editor,$plateform, $dateOfRelease, $description, $gamePictureUrl, $gameWebsiteUrl){
+    $bdd = dbConnect();
+    $insertNewGameCommande = "INSERT INTO JEU(Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu) VALUES ($nom,$editor,$plateform, $dateOfRelease, $description, $gamePictureUrl, $gameWebsiteUrl);";
+    $bdd->query($insertNewGameCommande);
+}
 ?>
