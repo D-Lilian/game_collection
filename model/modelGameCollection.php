@@ -18,6 +18,14 @@
 }
 
 
+function getGamesWithSearch($filter){
+    $bdd = dbConnect();
+    $allGameQuery = $bdd->query('SELECT * FROM JEU WHERE Nom_Jeu LIKE \'%'.$filter.'%\';');
+    $returnAllGameQuery = $allGameQuery->fetchAll(PDO::FETCH_ASSOC);
+    return $returnAllGameQuery;
+}
+
+
 function getGamesOfPlayer($emailGamer){
     $bdd = dbConnect();
     $gamesOfPlayerQuery = $bdd->query('SELECT Nb_Heure, Id_Jeu, Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu FROM JOUEUR INNER JOIN COLLECTION ON JOUEUR.Email_Joueur = COLLECTION.Email_Joueur INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE Email_Joueur=\''.$emailGamer.'\'');
@@ -47,7 +55,7 @@ function getGamerInformation($emailGamer){
 
 function insertNewGame($name,$editor,$plateform, $dateOfRelease, $description, $gamePictureUrl, $gameWebsiteUrl){
     $bdd = dbConnect();
-    $insertNewGameCommande = "INSERT INTO JEU(Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu) VALUES ($nom,$editor,$plateform, $dateOfRelease, $description, $gamePictureUrl, $gameWebsiteUrl);";
+    $insertNewGameCommande = "INSERT INTO JEU(Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu) VALUES ($name,$editor,$plateform, $dateOfRelease, $description, $gamePictureUrl, $gameWebsiteUrl);";
     $bdd->query($insertNewGameCommande);
 }
 ?>

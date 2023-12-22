@@ -17,7 +17,7 @@
             <h1>Ajouter un jeu à sa bibliothèque</h1>
         </div>
         <div class="myGames">
-            <form method="post">
+            <form method="post" action="">
                 <input class="textAdd" type="text" name="nameOfGame" placeholder="Rechercher un jeu">
                 <button class="button" type="submit">RECHERCHER</button>
             </form>
@@ -31,23 +31,32 @@
         <div>
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <section>
-                            <!-- Box -->
-                            <div class="boxcontainer">
-                                <div class="content">
-                                    <div class="text">
-                                        <h2>name of the game</h2>
-                                        <div>
-                                            <p class="platform">Pc, Xbox serie X, Xbox serie S, Sbox one, Playstation 4,
-                                                Playstation 5, Nintendo Switch, Android phone, IOS phone</p>
-                                            <button class="button" type="submit">AJOUTER A LA BIBLIOTHÈQUE</button>
+                    <?php
+                    //var_dump($games);
+                    foreach ($games as $game){
+                    ?>
+                        <div class="col-4">
+                            <section>
+                                <!-- Box -->
+                                <div class="boxcontainer">
+                                    <div class="content">
+                                        <div class="text">
+                                            <h2><?php echo $game["Nom_Jeu"]?></h2>
+                                            <div>
+                                                <p class="platform"><?php echo $game["Plateforme_Jeu"]?></p>
+                                                <form method="post" action="">
+                                                    <input class="textAdd" type="hidden" name="idOfGame" value="<?php echo $game["Id_Jeu"]?>">
+                                                    <button class="button" type="submit">AJOUTER A LA BIBLIOTHÈQUE</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                    </div>
+                            </section>
+                        </div>
+                    <?php 
+                            }
+                    ?>
                 </div>
             </div>
         </div>
