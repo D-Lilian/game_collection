@@ -11,5 +11,7 @@
             "email": "88926501+JDjudgedead4@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
 }
