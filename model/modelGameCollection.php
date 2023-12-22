@@ -20,7 +20,7 @@
 
 function getGamesWithSearch($filter){
     $bdd = dbConnect();
-    $allGameQuery = $bdd->query('SELECT * FROM JEU WHERE Nom_Jeu LIKE \'%'.$filter.'%\';');
+    $allGameQuery = $bdd->query('SELECT * FROM JEU WHERE Nom_Jeu LIKE \'%'.$filter.'%\' AND Id_Jeu NOT IN (SELECT Id_Jeu FROM COLLECTION WHERE Email_Joueur="liliane.daura@tg.com");');
     $returnAllGameQuery = $allGameQuery->fetchAll(PDO::FETCH_ASSOC);
     return $returnAllGameQuery;
 }
@@ -61,8 +61,11 @@ function insertNewGame($name,$editor,$plateform, $dateOfRelease, $description, $
 
 function insertLinkGamePlayer($emailPlayer,$idGame){
     $bdd = dbConnect();
-    $insertNewGameCommande = "INSERT INTO COLLECTION VALUES ('$emailPlayer',".intval($idGame).",4,0);";
-    print($insertNewGameCommande);
+    $emailGamer="liliane.daura@tg.com";
+    $numberGamePlayer = $bdd->query('SELECT MAX(Numero_Jeu_Joueur) FROM COLLECTION WHERE Email_Joueur=\''.$emailGamer.'\'');
+    $returnNumberGamePlayer = $numberGamePlayer->fetchAll(PDO::FETCH_ASSOC);
+    $maxi=intval($returnNumberGamePlayer[0]["MAX(Numero_Jeu_Joueur)"])+1;
+    $insertNewGameCommande = "INSERT INTO COLLECTION VALUES ('$emailPlayer',".intval($idGame).",".$maxi.",0);";
     $bdd->query($insertNewGameCommande);
 }
 ?>
