@@ -38,7 +38,7 @@
                         <div class="col-4">
                             <section>
                                 <!-- Box -->
-                                <div class="boxcontainer">
+                                <div class="boxcontainer" style="background-image: url('<?php echo $game['Url_Cover_Jeu']; ?>');">
                                     <div class="content">
                                         <div class="text">
                                             <h2><?php echo $game["Nom_Jeu"]?></h2>

@@ -14,7 +14,7 @@
     <?php require('./assets/header.php'); ?>
     <div class="banner">
         <br>
-        <div class="nonBanner">SALUT MACHIN
+        <div class="nonBanner">SALUT liliane.daura@tg.com
             <br>PRÊT A AJOUTER DES
             <br>JEUX A TA COLLECTION ?
         </div>
@@ -29,23 +29,29 @@
         <div>
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <!-- Box -->
-                        <section>
-                            <div class="boxcontainer">
-                                <div class="content">
-                                    <div class="text">
-                                        <h2>name of the game</h2>
-                                        <div>
-                                            <p class="platform">Pc, Xbox serie X, Xbox serie S, Sbox one, Playstation 4,
-                                                Playstation 5, Nintendo Switch, Android phone, IOS phone</p>
-                                            <p class="hours">6666H</p>
+                    <?php
+                    //var_dump($games);
+                    foreach ($gamesOfPlayer as $game){
+                    ?>
+                        <div class="col-4">
+                            <!-- Box -->
+                            <section>
+                                <div class="boxcontainer" style="background-image: url('<?php echo $game['Url_Cover_Jeu']; ?>');">
+                                    <div class="content">
+                                        <div class="text">
+                                            <h2><?php echo $game["Nom_Jeu"]?></h2>
+                                            <div>
+                                                <p class="platform"><?php echo $game["Plateforme_Jeu"]?></p>
+                                                <p class="hours"><?php echo $game["Nb_Heure"]?></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                    </div>
+                            </section>
+                        </div>
+                    <?php 
+                    }
+                    ?>
                 </div>
             </div>
         </div>

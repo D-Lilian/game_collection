@@ -12,7 +12,7 @@
 
  function getAllGames(){
     $bdd = dbConnect();
-    $allGameQuery = $bdd->query('SELECT * FROM JEU');
+    $allGameQuery = $bdd->query('SELECT * FROM JEU WHERE Id_Jeu NOT IN (SELECT Id_Jeu FROM COLLECTION WHERE Email_Joueur="liliane.daura@tg.com")');
     $returnAllGameQuery = $allGameQuery->fetchAll(PDO::FETCH_ASSOC);
     return $returnAllGameQuery;
 }
@@ -28,7 +28,7 @@ function getGamesWithSearch($filter){
 
 function getGamesOfPlayer($emailGamer){
     $bdd = dbConnect();
-    $gamesOfPlayerQuery = $bdd->query('SELECT Nb_Heure, Id_Jeu, Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu FROM JOUEUR INNER JOIN COLLECTION ON JOUEUR.Email_Joueur = COLLECTION.Email_Joueur INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE Email_Joueur=\''.$emailGamer.'\'');
+    $gamesOfPlayerQuery = $bdd->query('SELECT Nb_Heure, JEU.Id_Jeu, Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu FROM JOUEUR INNER JOIN COLLECTION ON JOUEUR.Email_Joueur = COLLECTION.Email_Joueur INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE JOUEUR.Email_Joueur=\''.$emailGamer.'\'');
     $returnGamesOfPlayerQuery = $gamesOfPlayerQuery->fetchAll(PDO::FETCH_ASSOC);
     return $returnGamesOfPlayerQuery;
 }
@@ -61,7 +61,7 @@ function insertNewGame($name,$editor,$plateform, $dateOfRelease, $description, $
 
 function insertLinkGamePlayer($emailPlayer,$idGame){
     $bdd = dbConnect();
-    $insertNewGameCommande = "INSERT INTO COLLECTION VALUES ('$emailPlayer',".intval($idGame).",4,1);";
+    $insertNewGameCommande = "INSERT INTO COLLECTION VALUES ('$emailPlayer',".intval($idGame).",4,0);";
     print($insertNewGameCommande);
     $bdd->query($insertNewGameCommande);
 }
