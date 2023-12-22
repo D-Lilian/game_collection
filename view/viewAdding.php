@@ -44,7 +44,10 @@
                                             <h2><?php echo $game["Nom_Jeu"]?></h2>
                                             <div>
                                                 <p class="platform"><?php echo $game["Plateforme_Jeu"]?></p>
-                                                <button class="button" type="submit">AJOUTER A LA BIBLIOTHÈQUE</button>
+                                                <form method="post" action="index.php?action=addGame">
+                                                    <input class="textAdd" type="hidden" name="idOfGame" value="<?php echo $game["Id_Jeu"]?>">
+                                                    <button class="button" type="submit">AJOUTER A LA BIBLIOTHÈQUE</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
