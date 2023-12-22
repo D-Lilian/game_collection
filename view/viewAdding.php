@@ -17,7 +17,7 @@
             <h1>Ajouter un jeu à sa bibliothèque</h1>
         </div>
         <div class="myGames">
-            <form method="post">
+            <form method="post" action="">
                 <input class="textAdd" type="text" name="nameOfGame" placeholder="Rechercher un jeu">
                 <button class="button" type="submit">RECHERCHER</button>
             </form>
