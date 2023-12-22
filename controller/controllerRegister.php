@@ -1,6 +1,13 @@
 <?php
 
 
+if (isset($_POST['email']))
+{ 
+    require('../controller/controllerLogin.php');
+}
+ 
+
+require('../view/viewregister.php');
 
 session_start();
 
@@ -14,7 +21,6 @@ $Mail_Uti = $_POST['email'];
 if (true){
 $_SESSION ["Mail_Uti"]=$Mail_Uti;
 }
-require('../view/viewLogin.php');
 
 
 
