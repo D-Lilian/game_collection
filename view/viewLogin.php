@@ -20,7 +20,7 @@
             <input class="text" type="password" name="password" minlength=1 maxlength=100>
             <button class="button" type="submit">SE CONNECTER</button>
             <br>
-            <a href="../view/viewRegister.php" class="register">S'inscrire</a>
+            <a href="register" class="register">S'inscrire</a>
         </form>
     </div>
     <?php require('./assets/footer.php'); ?>

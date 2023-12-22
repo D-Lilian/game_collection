@@ -1,5 +1,5 @@
 <?php
 
-require('../view/viewregister.php');
+require('./view/viewLogin.php');
 
 ?>

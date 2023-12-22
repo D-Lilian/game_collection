@@ -1,26 +1,32 @@
 <?php
 
+var_dump($_POST);
+if (isset($_POST['email'])){ 
+    
+    //appel du modèle pour check si mail uti already used
+    //appel du modèle pour insertion en db
 
-if (isset($_POST['email']))
-{ 
-    require('../controller/controllerLogin.php');
+    session_start();
+
+    
+    
+    $nom = $_POST['lastName'];
+    $prenom = $_POST['firstName'];
+    $Mail_Uti = $_POST['email'];
+    if (true){
+        $_SESSION ["Mail_Uti"]=$Mail_Uti;
+        }
+    $_GET['page']="login";
+    header('index.php/login');
+}else {
+    require('./view/viewRegister.php');
 }
  
 
-require('../view/viewregister.php');
 
-session_start();
-
-$nom = $_POST['lastName'];
-$prenom = $_POST['firstName'];
-$Mail_Uti = $_POST['email'];
 
 //appel du modèle pour check si mail uti already used
 //appel du modèle pour insertion en db
-
-if (true){
-$_SESSION ["Mail_Uti"]=$Mail_Uti;
-}
 
 
 
