@@ -18,12 +18,19 @@
 }
 
 
-function getGamesOfPlayer(){
+function getGamesOfPlayer($emailJoueur){
     $bdd = dbConnect();
-    // IMPORTANT METTRE UNE VARIABLE POUR IDENTIFIER LE JOUEUR, NON FOJNCTIONNEL
-    $gamesOfPlayerQuery = $bdd->query('SELECT Nb_Heure, Id_Jeu, Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu FROM JOUEUR INNER JOIN COLLECTION ON JOUEUR.Email_Joueur = COLLECTION.Email_Joueur INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE Email_Joueur=\'test\'');
+    $gamesOfPlayerQuery = $bdd->query('SELECT Nb_Heure, Id_Jeu, Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu FROM JOUEUR INNER JOIN COLLECTION ON JOUEUR.Email_Joueur = COLLECTION.Email_Joueur INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE Email_Joueur=\''.$emailJoueur.'\'');
     $returnGamesOfPlayerQuery = $gamesOfPlayerQuery->fetchAll(PDO::FETCH_ASSOC);
     return $returnGamesOfPlayerQuery;
+}
+
+
+function isAPlayer($emailJoueur){
+    $bdd = dbConnect();
+    $allGamerInformationQuery = $bdd->query('SELECT * FROM JOUEUR WHERE Email_Joueur=\''.$emailJoueur.'\'');
+    $returnAllGamerInformationQuery = $allGamerInformationQuery->fetchAll(PDO::FETCH_ASSOC);
+    return $returnAllGamerInformationQuery;
 }
 
 ?>
