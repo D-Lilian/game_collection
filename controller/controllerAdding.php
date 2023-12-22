@@ -11,8 +11,9 @@ else{
 
 
 //add a new game, add it
-if ($_POST["idOfGame"]>0){
-    header('Location: ./controller/controllerHome.php');
+if (isset($_POST["idOfGame"])){
+    //insert...
+    header('Location: home');
     exit();
 }
 

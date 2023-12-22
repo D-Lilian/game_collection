@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.00, user-scalable=yes" />
     <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/home.css" />
-    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/home.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
 </head>
 
 <body>
-    <?php require('../assets/header.php'); ?>
+    <?php require('./assets/header.php'); ?>
     <div class="banner">
         <br>
         <div class="nonBanner">SALUT MACHIN
@@ -50,7 +50,7 @@
             </div>
         </div>
     </div>
-    <?php require('../assets/footer.php'); ?>
+    <?php require('./assets/footer.php'); ?>
 </body>
 
 </html>
