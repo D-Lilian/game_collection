@@ -9,14 +9,12 @@
     return $bdd;
  }
 
-
  function getAllGames(){
     $bdd = dbConnect();
     $allGameQuery = $bdd->query('SELECT * FROM JEU WHERE Id_Jeu NOT IN (SELECT Id_Jeu FROM COLLECTION WHERE Email_Joueur="liliane.daura@tg.com")');
     $returnAllGameQuery = $allGameQuery->fetchAll(PDO::FETCH_ASSOC);
     return $returnAllGameQuery;
 }
-
 
 function getGamesWithSearch($filter){
     $bdd = dbConnect();
@@ -25,14 +23,12 @@ function getGamesWithSearch($filter){
     return $returnAllGameQuery;
 }
 
-
 function getGamesOfPlayer($emailGamer){
     $bdd = dbConnect();
     $gamesOfPlayerQuery = $bdd->query('SELECT Nb_Heure, JEU.Id_Jeu, Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu FROM JOUEUR INNER JOIN COLLECTION ON JOUEUR.Email_Joueur = COLLECTION.Email_Joueur INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE JOUEUR.Email_Joueur=\''.$emailGamer.'\'');
     $returnGamesOfPlayerQuery = $gamesOfPlayerQuery->fetchAll(PDO::FETCH_ASSOC);
     return $returnGamesOfPlayerQuery;
 }
-
 
 function isAPlayerInDataBase($emailGamer){
     $bdd = dbConnect();
@@ -44,14 +40,12 @@ function isAPlayerInDataBase($emailGamer){
     return false;
 }
 
-
 function getGamerInformation($emailGamer){
     $bdd = dbConnect();
     $gamerInformation = $bdd->query('SELECT * FROM JOUEUR WHERE Email_Joueur=\''.$emailGamer.'\'');
     $returnGamerInformationQuery = $gamerInformation->fetchAll(PDO::FETCH_ASSOC);
     return $returnGamerInformationQuery;
 }
-
 
 function insertNewGame($name,$editor,$plateform, $dateOfRelease, $description, $gamePictureUrl, $gameWebsiteUrl){
     $bdd = dbConnect();
@@ -76,4 +70,29 @@ function insertLinkGamePlayer($emailPlayer,$idGame){
     $insertNewGameCommande = "INSERT INTO COLLECTION VALUES ('$emailPlayer',".intval($idGame).",".$maxi.",0);";
     $bdd->query($insertNewGameCommande);
 }
+
+function getGamePlayer($emailPlayer,$idGame){
+    $bdd = dbConnect();
+    $emailGamer="liliane.daura@tg.com";
+    $allGamerInformationQuery = $bdd->query('SELECT * FROM JEU INNER JOIN COLLECTION ON COLLECTION.Id_Jeu=JEU.Id_Jeu WHERE Email_Joueur=\''.$emailGamer.'\' AND JEU.Id_Jeu='.$idGame.';');
+    $returnAllGamerInformationQuery = $allGamerInformationQuery->fetchAll(PDO::FETCH_ASSOC);
+    return $returnAllGamerInformationQuery;
+}
+
+function deleteLinkGamePlayer($emailPlayer,$idGame){
+    $bdd = dbConnect();
+    $emailGamer="liliane.daura@tg.com";
+    $deleteLinkGamePlayer = "DELETE FROM COLLECTION WHERE Email_Joueur='".$emailPlayer."' AND Id_Jeu=".$idGame.";";
+    $bdd->query($deleteLinkGamePlayer);
+}
+
+function updateTimeGamePlayer($emailPlayer,$idGame, $nbHour){
+    $bdd = dbConnect();
+    $emailGamer="liliane.daura@tg.com";
+    $updateHourGamePlayer = "UPDATE COLLECTION SET Nb_Heure=$nbHour WHERE Email_Joueur='".$emailPlayer."' AND Id_Jeu=".$idGame.";";
+    $bdd->query($updateHourGamePlayer);
+}
+
+
+
 ?>

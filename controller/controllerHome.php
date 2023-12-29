@@ -9,7 +9,7 @@ if(isset($_POST["addNewGame"])){
 
 if(isset($_POST["goToGame"])){
     $goToGame=htmlspecialchars($_POST["goToGame"]);
-    header('Location: update?'.$goToGame);
+    header('Location: update?Id_Jeu='.$goToGame);
 }
 
 require './view/viewHome.php';

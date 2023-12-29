@@ -15,23 +15,23 @@
     <div class="flex-container">
         <form method="post">
             <br><br><br>
-            <h1>Name of the game</h1>
-            <p>Description</p>
+            <h1><?php echo $game[0]['Nom_Jeu']; ?></h1>
+            <p><?php echo $game[0]['Desc_Jeu']; ?></p>
             <br>
-            <p>Temps passé : </p>
+            <p>Temps passé : <?php echo $game[0]['Nb_Heure']; ?> h</p>
             <br>
-            <p>Platform</p>
+            <p><?php echo $game[0]['Plateforme_Jeu']; ?></p>
             <br><br>
             <h2>Ajouter du temps passé sur le jeu</h2>
             <br>
             <p class="info">Temps passé sur le jeu</p>
-            <input class="text" type="text" name="lastName" value="last number of hours" minlength=1 maxlength=100
+            <input class="text" type="number" name="timeSpendOnGame" value="<?php echo $game[0]['Nb_Heure']; ?>" min=0 maxlength=100
                 required>
-            <button class="update" type="submit">AJOUTER</button>
-            <button class="delete" type="submit">SUPPRIMER LE JEU DE MA BIBLIOTHEQUE</button>
+            <button class="update" name="update" value="yes" type="submit">AJOUTER</button>
+            <button class="delete" name="delete" value="yes" type="submit">SUPPRIMER LE JEU DE MA BIBLIOTHEQUE</button>
         </form>
         <div class="image-container">
-            <img src="./assets/pictures/home_picture.png" class="side-image">
+            <img src="<?php echo $game[0]['Url_Cover_Jeu']; ?>" alt="image de <?php echo $game[0]['Nom_Jeu']; ?>" class="side-image">
         </div>
     </div>
     <?php require('./assets/footer.php'); ?>
