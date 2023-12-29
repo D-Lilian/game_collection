@@ -33,6 +33,9 @@
                 <div class="row">
                     <?php
                     //var_dump($games);
+                    if (count($games)==0){
+                        header('Location: addgame');
+                    }
                     foreach ($games as $game){
                     ?>
                         <div class="col-4">
