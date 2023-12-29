@@ -55,8 +55,16 @@ function getGamerInformation($emailGamer){
 
 function insertNewGame($name,$editor,$plateform, $dateOfRelease, $description, $gamePictureUrl, $gameWebsiteUrl){
     $bdd = dbConnect();
-    $insertNewGameCommande = "INSERT INTO JEU(Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu) VALUES ($name,$editor,$plateform, $dateOfRelease, $description, $gamePictureUrl, $gameWebsiteUrl);";
-    $bdd->query($insertNewGameCommande);
+    $insertNewGameCommande = "INSERT INTO JEU(Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu) VALUES (:name, :editor, :plateform, :dateOfRelease, :description, :gamePictureUrl, :gameWebsiteUrl)";
+    $bindInsertNewGameCommande = $bdd->prepare($insertNewGameCommande);
+    $bindInsertNewGameCommande->bindParam(':name', $name, PDO::PARAM_STR);
+    $bindInsertNewGameCommande->bindParam(':editor', $editor, PDO::PARAM_STR);
+    $bindInsertNewGameCommande->bindParam(':plateform', $plateform, PDO::PARAM_STR);
+    $bindInsertNewGameCommande->bindParam(':dateOfRelease', $dateOfRelease, PDO::PARAM_STR);
+    $bindInsertNewGameCommande->bindParam(':description', $description, PDO::PARAM_STR);
+    $bindInsertNewGameCommande->bindParam(':gamePictureUrl', $gamePictureUrl, PDO::PARAM_STR);
+    $bindInsertNewGameCommande->bindParam(':gameWebsiteUrl', $gameWebsiteUrl, PDO::PARAM_STR);
+    $bindInsertNewGameCommande->execute();
 }
 
 function insertLinkGamePlayer($emailPlayer,$idGame){

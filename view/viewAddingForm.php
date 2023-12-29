@@ -14,6 +14,7 @@
     <?php require('./assets/header.php'); ?>
     <div class="flex-container">
         <form method="post">
+        <input type="hidden" name="addNewGame" value="yes">
             <h1 class="title">Ajouter un jeu à sa bibliothèque</h1>
             <p>Le jeu que vous souhaitez ajouter n'existe pas ! Vous pouvez le créer, celui-ci sera automatiquement
                 ajouter à votre bibliothèque !</p>
