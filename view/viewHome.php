@@ -36,17 +36,20 @@
                         <div class="col-4">
                             <!-- Box -->
                             <section>
-                                <div class="boxcontainer" style="background-image: url('<?php echo $game['Url_Cover_Jeu']; ?>');">
-                                    <div class="content">
-                                        <div class="text">
-                                            <h2><?php echo $game["Nom_Jeu"]?></h2>
-                                            <div>
-                                                <p class="platform"><?php echo $game["Plateforme_Jeu"]?></p>
-                                                <p class="hours"><?php echo $game["Nb_Heure"]?></p>
+                                <form method="post">
+                                    <input type="hidden" name="goToGame" value="<?php echo $game['Id_Jeu']; ?>">
+                                    <button class="boxcontainer" type="submit" style="background-image: url('<?php echo $game['Url_Cover_Jeu']; ?>');">
+                                        <div class="content">
+                                            <div class="text">
+                                                <h2><?php echo $game["Nom_Jeu"]?></h2>
+                                                <div>
+                                                    <p class="platform"><?php echo $game["Plateforme_Jeu"]?></p>
+                                                    <p class="hours"><?php echo $game["Nb_Heure"]?></p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </button>
+                                </form>
                             </section>
                         </div>
                     <?php 
