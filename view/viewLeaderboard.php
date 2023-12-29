@@ -18,14 +18,20 @@
             <tbody>
                 <tr>
                     <td>Joueur</td>
-                    <td>Temps passés</td>
+                    <td>Temps passé</td>
                     <td>Jeu Favori</td>
                 </tr>
-                <tr>
-                    <td>name</td>
-                    <td>hours</td>
-                    <td>game</td>
-                </tr>
+                <?php
+                    foreach ($bestPlayers as $player){
+                ?>
+                    <tr>
+                        <td><?php echo($player["Prenom_Joueur"]." ".strtoupper($player["Nom_Joueur"])) ?></td>
+                        <td><?php echo($player["TempsDeJeuTotal"]) ?></td>
+                        <td><?php echo($player["JeuPrefere"]) ?></td>
+                    </tr>
+                <?php
+                    }
+                ?>
             </tbody>
         </table>
     </div>
