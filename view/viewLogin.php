@@ -17,10 +17,11 @@
             <p class="info">Email :</p>
             <input class="text" type="text" name="email" minlength=1 maxlength=500>
             <p class="info">Mot de passe :</p>
-            <input class="text" type="password" name="password" minlength=1 maxlength=100>
+            <input class="text" type="password" name="password" minlength=1 maxlength=100><br>
+            <p class="info"><?php echo $erreur?></p>
             <button class="button" type="submit">SE CONNECTER</button>
             <br>
-            <a href="../view/viewRegister.php" class="register">S'inscrire</a>
+            <button class="button" name="register" value="yes" type="submit">S'inscrire</a>
         </form>
     </div>
     <?php require('./assets/footer.php'); ?>

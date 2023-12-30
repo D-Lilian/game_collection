@@ -14,7 +14,7 @@
     <?php require('./assets/header.php'); ?>
     <div class="banner">
         <br>
-        <div class="nonBanner">SALUT liliane.daura@tg.com
+        <div class="nonBanner">SALUT <?php  echo$prenom;?> !
             <br>PRÊT A AJOUTER DES
             <br>JEUX A TA COLLECTION ?
         </div>
@@ -44,7 +44,7 @@
                                                 <h2><?php echo $game["Nom_Jeu"]?></h2>
                                                 <div>
                                                     <p class="platform"><?php echo $game["Plateforme_Jeu"]?></p>
-                                                    <p class="hours"><?php echo $game["Nb_Heure"]?></p>
+                                                    <p class="hours"><?php echo $game["Nb_Heure"]?> h</p>
                                                 </div>
                                             </div>
                                         </div>

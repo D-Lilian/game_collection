@@ -1,7 +1,12 @@
 <?php
 require './model/modelGameCollection.php';
+session_start();
+$currentEmail=htmlspecialchars($_SESSION["Mail_Uti"]);
+$informationsOfPlayer=getGamerInformation($currentEmail);
+$nom=strtoupper($informationsOfPlayer[0]["Nom_Joueur"]);
+$prenom=$informationsOfPlayer[0]["Prenom_Joueur"];
 
-$gamesOfPlayer=getGamesOfPlayer("liliane.daura@tg.com");
+$gamesOfPlayer=getGamesOfPlayer($currentEmail);
 
 if(isset($_POST["addNewGame"])){
     header('Location: update');

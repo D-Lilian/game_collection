@@ -1,6 +1,10 @@
 <?php
 require './model/modelGameCollection.php';
 
+if (!isset($_POST["addNewGame"])){
+    $_POST["addNewGame"]="no";
+}
+
 if($_POST["addNewGame"]=="yes"){
     $name = htmlspecialchars($_POST["nameGame"]);
     $editor = htmlspecialchars($_POST["editor"]);
