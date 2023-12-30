@@ -18,7 +18,7 @@
             <input class="text" type="text" name="email" minlength=1 maxlength=500>
             <p class="info">Mot de passe :</p>
             <input class="text" type="password" name="password" minlength=1 maxlength=100><br>
-            <center><p><?php echo $erreur?></p></center>
+            <p class="info"><?php echo $erreur?></p>
             <button class="button" type="submit">SE CONNECTER</button>
             <br>
             <a href="../view/viewRegister.php" class="register">S'inscrire</a>

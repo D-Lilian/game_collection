@@ -17,13 +17,13 @@
             <form method="post">
             <h1 class="title">Mon profil</h1>
             <p class="info">Nom :</p>
-            <input class="text" type="text" name="lastName" value="<?php echo $_ENV["LastName"] ?>" minlength=1
+            <input class="text" type="text" name="lastName" value="<?php echo $nom ?>" minlength=1
                 maxlength=100>
             <p class="info">Prénom :</p>
-            <input class="text" type="text" name="firstName" value="<?php echo $_ENV["FirstName"] ?>" minlength=1
+            <input class="text" type="text" name="firstName" value="<?php echo $prenom ?>" minlength=1
                 maxlength=100>
             <p class="info">Email :</p>
-            <input class="text" type="text" name="email" value="<?php echo $_ENV["mail"] ?>" minlength=1 maxlength=500>
+            <input class="text" type="text" name="email" value="<?php echo $_SESSION["Mail_Uti"] ?>" minlength=1 maxlength=500>
             <p class="info">Mot de passe :</p>
             <input class="text" type="password" name="password" value="" minlength=1 maxlength=100>
             <p class="info">Confirmation du mot de passe :</p>
@@ -35,10 +35,11 @@
         <?php }else { ?>
 
         <h1 class="title">Mon profil</h1>
-        <p class="info">Nom : <?php echo $nom ?></p>
-        <p class="info">Prénom : <?php echo $prenom ?></p>
-        <p class="info">Email : <?php echo $currentEmail ?></p>
-        
+
+        <p class="info_profil">Nom : <?php echo $nom ?></p>
+        <p class="info_profil">Prénom : <?php echo $prenom ?></p>
+        <p class="info_profil">Email : <?php echo $currentEmail ?></p>
+                
         <form method="post">
         <button class="update" name="update" value="yes" type="submit">MODIFIER</button>
         <button class="disconnect" name="disconnect" value="yes" type="submit">SE DÉCONNECTER</button>
