@@ -4,15 +4,11 @@ require './model/modelGameCollection.php';
 session_start();
 $currentEmail=htmlspecialchars($_SESSION["Mail_Uti"]);
 $UserInformation=getGamerInformation($currentEmail);
-var_dump($UserInformation);
 $prenom = $UserInformation[0]["Prenom_Joueur"];
 $nom = $UserInformation[0]["Nom_Joueur"];
 require './view/viewProfil.php';
-
-
-
 if(isset($_POST["update"])){
-    if (isset($_POST['password']) && isset($_POST['confPassword'])) {
+    if (isset($_POST['password']) && isset($_POST['confPassword'])) {//secure
         $password = $_POST['password'];
         $confPassword = $_POST['confPassword'];
         if ($password == $confPassword) {
@@ -20,15 +16,14 @@ if(isset($_POST["update"])){
         } else {
             header('Location: index.php/profil');
         }
+    }else{
+        $pwd = $UserInformation[0]["Mdp_Joueur"];
     }
-
-
-    /*modele ($_POST["mail"],$_POST["lastName"],$_POST["firstName"],$pwd)*/
+    updatePlayer($_SESSION["Mail_Uti"], $prenom, $nom, $pwd)
     header('Location: profil');
 }
 
 if(isset($_POST["delete"])){
-    /*modele delete pwd avec mail en parametre*/ 
     header('Location: register');
 }
 
