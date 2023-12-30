@@ -16,13 +16,13 @@
         <form method="post">
             <h1 class="title">Mon profil</h1>
             <p class="info">Nom :</p>
-            <input class="text" type="text" name="lastName" value="<?php echo $_SESSION["Nom"] ?>" minlength=1
+            <input class="text" type="text" name="lastName" value="<?php echo $nom ?>" minlength=1
                 maxlength=100>
             <p class="info">Prénom :</p>
-            <input class="text" type="text" name="firstName" value="<?php echo $_SESSION["Prenom"] ?>" minlength=1
+            <input class="text" type="text" name="firstName" value="<?php echo $prenom ?>" minlength=1
                 maxlength=100>
             <p class="info">Email :</p>
-            <input class="text" type="text" name="mail" value="<?php echo $_SESSION["mail"] ?>" minlength=1 maxlength=500>
+            <input class="text" type="text" name="mail" value="<?php echo $currentEmail ?>" minlength=1 maxlength=500>
             <p class="info">Mot de passe :</p>
             <input class="text" type="password" name="password" value="" minlength=1 maxlength=100>
             <p class="info">Confirmation du mot de passe :</p>
