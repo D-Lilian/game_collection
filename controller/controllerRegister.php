@@ -11,14 +11,14 @@ function secure($data){
 }
 if (isset($_POST['email'])){ 
         
-    $Nom = $_POST['lastName'];
-    $Prenom = $_POST['firstName'];
-    $Mail_Uti = $_POST['email'];
+    $Nom = secure($_POST['lastName']);
+    $Prenom = secure($_POST['firstName']);
+    $Mail_Uti = secure($_POST['email']);
     $_SESSION["Nom"] = $Nom;
     $_SESSION["Preom"] = $Prenom;
     if (isset($_POST['password']) && isset($_POST['confPassword'])) {
-        $password = $_POST['password'];
-        $confPassword = $_POST['confPassword'];
+        $password = secure($_POST['password']);
+        $confPassword = secure($_POST['confPassword']);
         if ($password == $confPassword) {
             $pwd = $password;
             echo "Les mots de passe sont identiques.";
