@@ -14,7 +14,7 @@
     <?php require('./assets/header.php'); ?>
     <div class="banner">
         <br>
-        <div class="nonBanner">SALUT liliane.daura@tg.com
+        <div class="nonBanner">SALUT <?php  echo$prenom;?> !
             <br>PRÊT A AJOUTER DES
             <br>JEUX A TA COLLECTION ?
         </div>

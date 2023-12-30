@@ -6,6 +6,7 @@ function secure($data){
     $data = htmlspecialchars($data);
     return $data;
 }
+$erreur="";
 
 if(isset($_POST['email']) && $_POST['email'] != null && isset($_POST['password']) && $_POST['password'] != null){
 
