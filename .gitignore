@@ -2,3 +2,5 @@
 /vendor/
 /.env
 notimplemented.php
+composer.json
+composer.lock
