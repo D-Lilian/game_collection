@@ -7,6 +7,7 @@ function secure($data){
     return $data;
 }
 
+$erreur=null;
 if(isset($_POST['email']) && $_POST['email'] != null && isset($_POST['password']) && $_POST['password'] != null){
 
     require('./model/modelGameCollection.php');
@@ -15,8 +16,9 @@ if(isset($_POST['email']) && $_POST['email'] != null && isset($_POST['password']
     if(isItPlayerPassword($email, $pwd)){
         session_start();
         $_SESSION["Mail_Uti"] = $email;
-        require('./controller/controllerHome.php');
+        header('Location: home');
     }else{
+        $erreur="Mauvaise adresse mail ou mot de passe";
         require('./view/viewLogin.php');
     }
 } else{
