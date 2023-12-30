@@ -1,8 +1,13 @@
 <?php
 require './model/modelGameCollection.php';
-require './view/viewProfil.php';
 
 session_start();
+$UserInformation=getGamerInformation($_SESSION["Mail_Uti"]);
+$_SESSION["prenom"] = $UserInformation[0]["Prenom_Joueur"];
+$_SESSION["Nom"] = $UserInformation[0]["Nom_Joueur"];
+require './view/viewProfil.php';
+
+
 
 if(isset($_POST["update"])){
     if (isset($_POST['password']) && isset($_POST['confPassword'])) {

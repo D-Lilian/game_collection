@@ -24,8 +24,8 @@ if($_GET['page'] === 'addgame'){
     require('./controller/controllerAddingForm.php');
 }
 
-if($_GET['page'] === 'user'){
-    require('./controller/controllerUser.php');
+if($_GET['page'] === 'profil'){
+    require('./controller/controllerprofil.php');
 }
 
 if($_GET['page'] === 'update'){
