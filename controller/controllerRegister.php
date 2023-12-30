@@ -11,10 +11,11 @@ function secure($data){
 }
 if (isset($_POST['email'])){ 
         
-    $nom = $_POST['lastName'];
-    $prenom = $_POST['firstName'];
+    $Nom = $_POST['lastName'];
+    $Prenom = $_POST['firstName'];
     $Mail_Uti = $_POST['email'];
-    
+    $_SESSION["Nom"] = $nom;
+    $_SESSION["Preom"] = $prenom;
     if (isset($_POST['password']) && isset($_POST['confPassword'])) {
         $password = $_POST['password'];
         $confPassword = $_POST['confPassword'];

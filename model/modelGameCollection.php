@@ -104,7 +104,7 @@ function getTenBestPlayers(){
 function insertNewUser($lastName, $mail, $mdp, $firstName)
 {
     $bdd = dbConnect();
-    $insertNewUserCommande = "INSERT INTO joueur(Email_Joueur,Prenom_Joueur,Mdp_Joueur,Nom_Joueur) VALUES ($mail,$mdp,$lastName,$firstName);";
+    $insertNewUserCommande = "INSERT INTO joueur(Email_Joueur,Prenom_Joueur,Mdp_Joueur,Nom_Joueur) VALUES ($mail,$firstName,$lastName,$mdp);";
     $bdd->query($insertNewUserCommande);
 }
 
