@@ -7,7 +7,6 @@ function secure($data){
     return $data;
 }
 
-$erreur=null;
 if(isset($_POST['email']) && $_POST['email'] != null && isset($_POST['password']) && $_POST['password'] != null){
 
     require('./model/modelGameCollection.php');
