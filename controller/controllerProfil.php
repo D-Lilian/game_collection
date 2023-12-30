@@ -1,5 +1,7 @@
 <?php
 require './model/modelGameCollection.php';
+require './view/viewProfil.php';
+
 session_start();
 
 if(isset($_POST["update"])){
@@ -30,5 +32,4 @@ if(isset($_POST["disconnect"])){
     session_destroy();
     header('Location: login');
 }
-require './view/viewProfil.php';
 ?>

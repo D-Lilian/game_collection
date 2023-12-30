@@ -14,8 +14,8 @@ if (isset($_POST['email'])){
     $Nom = $_POST['lastName'];
     $Prenom = $_POST['firstName'];
     $Mail_Uti = $_POST['email'];
-    $_SESSION["Nom"] = $nom;
-    $_SESSION["Preom"] = $prenom;
+    $_SESSION["Nom"] = $Nom;
+    $_SESSION["Preom"] = $Prenom;
     if (isset($_POST['password']) && isset($_POST['confPassword'])) {
         $password = $_POST['password'];
         $confPassword = $_POST['confPassword'];
@@ -23,15 +23,15 @@ if (isset($_POST['email'])){
             $pwd = $password;
             echo "Les mots de passe sont identiques.";
         } else {
-            header('Location: index.php/login');
+            header('Location: register');
         }
     }
     if (isAPlayerInDataBase($Mail_Uti)){
-    header('index.php/login');
+        header('Location: login');    
     }else {
-        insertNewUser($nom, $Mail_Uti, $pwd, $prenom);
+        insertNewUser($Mail_Uti, $Prenom, $Nom,  $pwd);
         $_SESSION["Mail_Uti"]=$Mail_Uti;
-        header('index.php/user');
+        header('Location: profil');    
     }
 }
 
