@@ -8,6 +8,10 @@ function secure($data){
 }
 $erreur="";
 
+if(isset($_POST["register"])){
+    header('Location: register');
+}
+
 if(isset($_POST['email']) && $_POST['email'] != null && isset($_POST['password']) && $_POST['password'] != null){
 
     require('./model/modelGameCollection.php');

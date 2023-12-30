@@ -9,8 +9,12 @@ function secure($data){
     $data = htmlspecialchars($data);
     return $data;
 }
-if (isset($_POST['email'])){ 
-        
+
+if(isset($_POST["login"])){
+    header('Location: login');
+}
+
+if (isset($_POST['email'])){   
     $Nom = secure($_POST['lastName']);
     $Prenom = secure($_POST['firstName']);
     $Mail_Uti = secure($_POST['email']);

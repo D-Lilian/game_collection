@@ -56,7 +56,6 @@ function isAPlayerInDataBase($emailGamer){
     $gamerInformationQuery->execute();
     $returnGamerInformationQuery = $gamerInformationQuery->fetchAll(PDO::FETCH_ASSOC);
     $gamerInformationQuery->closeCursor();
-
     if (count($returnGamerInformationQuery)>0){
         return true;
     }
@@ -156,7 +155,7 @@ function insertNewUser($mail, $firstName, $lastName, $pwd){
     $insertNewUserCommande->bindParam(':mail', $mail, PDO::PARAM_STR);
     $insertNewUserCommande->bindParam(':firstName', $firstName, PDO::PARAM_STR);
     $insertNewUserCommande->bindParam(':lastName', $lastName, PDO::PARAM_STR);
-    $insertNewUserCommande->bindParam(':pwd', $pwd, PDO::PARAM_STR);
+    $insertNewUserCommande->bindParam(':pwd', password_hash($pwd, PASSWORD_DEFAULT), PDO::PARAM_STR);
 
     $insertNewUserCommande->execute();
     $insertNewUserCommande->closeCursor();
@@ -172,12 +171,13 @@ function isItPlayerPassword($email, $pwd){
     $stmt->bindParam(':email', $emailAVerifier, PDO::PARAM_STR);
     $stmt->execute();
     $returnEmailGamers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    if (count($returnEmailGamers) > 0 && $returnEmailGamers[0]["Mdp_Joueur"] === $pwdAVerifier) {
+    if (count($returnEmailGamers) > 0 && password_verify($pwdAVerifier, $returnEmailGamers[0]["Mdp_Joueur"])) {
         return true;
     }
 
     return false;
 }
+
 
 
 function deletePlayer($emailPlayer){
@@ -196,12 +196,21 @@ function deletePlayer($emailPlayer){
 
 
 
-function updatePlayer($email, $firstName, $lastName, $pwd){
+function updatePlayer($email, $firstName, $lastName){
     $bdd = dbConnect();
-    $query = "UPDATE JOUEUR SET Prenom_Joueur = :firstName, Nom_Joueur = :lastName, Mdp_Joueur = :pwd WHERE Email_Joueur = :email";
+    $query = "UPDATE JOUEUR SET Prenom_Joueur = :firstName, Nom_Joueur = :lastName WHERE Email_Joueur = :email";
     $updatePlayerCommand = $bdd->prepare($query);
     $updatePlayerCommand->bindParam(':firstName', $firstName, PDO::PARAM_STR);
     $updatePlayerCommand->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+    $updatePlayerCommand->bindParam(':email', $email, PDO::PARAM_STR);
+    $updatePlayerCommand->execute();
+    $updatePlayerCommand->closeCursor();
+}
+
+function updatePwdPlayer($email, $pwd){
+    $bdd = dbConnect();
+    $query = "UPDATE JOUEUR SET Mdp_Joueur = :pwd WHERE Email_Joueur = :email";
+    $updatePlayerCommand = $bdd->prepare($query);
     $updatePlayerCommand->bindParam(':pwd', $pwd, PDO::PARAM_STR);
     $updatePlayerCommand->bindParam(':email', $email, PDO::PARAM_STR);
     $updatePlayerCommand->execute();

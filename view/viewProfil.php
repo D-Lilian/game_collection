@@ -25,9 +25,9 @@
             <p class="info">Email :</p>
             <input class="text" type="text" name="email" value="<?php echo $_SESSION["Mail_Uti"] ?>" minlength=1 maxlength=500>
             <p class="info">Mot de passe :</p>
-            <input class="text" type="password" name="password" value="" minlength=1 maxlength=100>
+            <input class="text" type="password" name="password" minlength=1 maxlength=100>
             <p class="info">Confirmation du mot de passe :</p>
-            <input class="text" type="password" name="confPassword" value="" minlength=1 maxlength=100>
+            <input class="text" type="password" name="confPassword" minlength=1 maxlength=100>
             <button class="update" name="update_with_form" type="submit">MODIFIER</button>
             <button class="disconnect" name="disconnect" type="submit">SE DÉCONNECTER</button>
             <button class="delete" name="delete" type="submit">SUPPRIMER MON COMPTE</button>

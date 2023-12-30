@@ -13,18 +13,23 @@ $prenom = $UserInformation[0]["Prenom_Joueur"];
 $nom = $UserInformation[0]["Nom_Joueur"];
 require './view/viewProfil.php';
 if(isset($_POST["update_with_form"])){
-    if (isset($_POST['password']) && isset($_POST['confPassword'])) {
+    $prenom=htmlspecialchars($_POST["firstName"]);
+    $nom=htmlspecialchars($_POST["lastName"]);
+    $newMail=htmlspecialchars($_POST["email"]);
+    $pwd = htmlspecialchars($UserInformation[0]["Mdp_Joueur"]);
+    if (isset($_POST['password']) && isset($_POST['confPassword']) && $_POST['password']!="") {
         $password = secure($_POST['password']);
         $confPassword = secure($_POST['confPassword']);
         if ($password == $confPassword) {
-            $pwd = $password;
-        } else {
+            $pwd = password_hash($password, PASSWORD_DEFAULT); 
+            updatePwdPlayer($_SESSION["Mail_Uti"], $pwd);
+        } 
+        else {
             header('Location: index.php/profil');
         }
-    }else{
-        $pwd = $UserInformation[0]["Mdp_Joueur"];
     }
-    updatePlayer($_SESSION["Mail_Uti"], $prenom, $nom, $pwd);
+    updatePlayer($_SESSION["Mail_Uti"], $prenom, $nom, $newMail);
+    var_dump($_POST);
     header('Location: profil');
 }
 
