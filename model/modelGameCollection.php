@@ -128,6 +128,25 @@ function isItPlayerPassword($email, $pwd){
 }
 
 
+function deletePlayer($emailPlayer){
+    $bdd = dbConnect();
+    $deleteGamePlayer = "DELETE FROM COLLECTION WHERE Email_Joueur='".$emailPlayer.";";
+    $bdd->query($deleteGamePlayer);
+    $deletePlayer = "DELETE FROM JOUEUR WHERE Email_Joueur='".$emailPlayer.";";
+    $bdd->query($deletePlayer);
+}
+
+
+function updatePlayer($email, $firstName, $lastName, $pwd){
+    $bdd = dbConnect();
+    $emailGamer="liliane.daura@tg.com";
+    $updateHourGamePlayer = "UPDATE JOUEUR SET Prenom_Joueur=$firstName, Nom_Joueur=$lastName, Mdp_Joueur=$pwd WHERE Email_Joueur='".$email.";";
+    $bdd->query($updateHourGamePlayer);
+}
+
+
+
+
 
 
 ?>
