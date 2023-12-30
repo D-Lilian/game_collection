@@ -12,8 +12,8 @@ $UserInformation=getGamerInformation($currentEmail);
 $prenom = $UserInformation[0]["Prenom_Joueur"];
 $nom = $UserInformation[0]["Nom_Joueur"];
 require './view/viewProfil.php';
-if(isset($_POST["update"])){
-    if (isset($_POST['password']) && isset($_POST['confPassword'])) {//secure
+if(isset($_POST["update_with_form"])){
+    if (isset($_POST['password']) && isset($_POST['confPassword'])) {
         $password = secure($_POST['password']);
         $confPassword = secure($_POST['confPassword']);
         if ($password == $confPassword) {

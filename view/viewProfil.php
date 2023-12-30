@@ -12,25 +12,38 @@
 
 <body>
     <?php require('./assets/header.php'); ?>
-    <div class="flex-container">
-        <form method="post">
+    <<div class="flex-container">
+        <?php if (isset($_POST["update"])) { ?>
+            <form method="post">
             <h1 class="title">Mon profil</h1>
             <p class="info">Nom :</p>
-            <input class="text" type="text" name="lastName" value="<?php echo $nom ?>" minlength=1
+            <input class="text" type="text" name="lastName" value="<?php echo $_ENV["LastName"] ?>" minlength=1
                 maxlength=100>
             <p class="info">Prénom :</p>
-            <input class="text" type="text" name="firstName" value="<?php echo $prenom ?>" minlength=1
+            <input class="text" type="text" name="firstName" value="<?php echo $_ENV["FirstName"] ?>" minlength=1
                 maxlength=100>
             <p class="info">Email :</p>
-            <input class="text" type="text" name="mail" value="<?php echo $currentEmail ?>" minlength=1 maxlength=500>
+            <input class="text" type="text" name="email" value="<?php echo $_ENV["mail"] ?>" minlength=1 maxlength=500>
             <p class="info">Mot de passe :</p>
             <input class="text" type="password" name="password" value="" minlength=1 maxlength=100>
             <p class="info">Confirmation du mot de passe :</p>
             <input class="text" type="password" name="confPassword" value="" minlength=1 maxlength=100>
-            <button class="update" name="update" value="yes" type="submit">MODIFIER</button>
-            <button class="disconnect" name="disconnect" value="yes" type="submit">SE DÉCONNECTER</button>
-            <button class="delete" name="delete" value="yes" type="submit">SUPPRIMER MON COMPTE</button>
+            <button class="update" name="update_with_form" type="submit">MODIFIER</button>
+            <button class="disconnect" name="disconnect" type="submit">SE DÉCONNECTER</button>
+            <button class="delete" name="delete" type="submit">SUPPRIMER MON COMPTE</button>
         </form>
+        <?php }else { ?>
+
+        <h1 class="title">Mon profil</h1>
+        <p class="info">Nom : <?php echo $nom ?></p>
+        <p class="info">Prénom : <?php echo $prenom ?></p>
+        <p class="info">Email : <?php echo $currentEmail ?></p>
+        
+        <form method="post">
+        <button class="update" name="update" value="yes" type="submit">MODIFIER</button>
+        <button class="disconnect" name="disconnect" value="yes" type="submit">SE DÉCONNECTER</button>
+        <button class="delete" name="delete" value="yes" type="submit">SUPPRIMER MON COMPTE</button>
+        <?php } ?>
     </div>
     <?php require('./assets/footer.php'); ?>
 </body>
