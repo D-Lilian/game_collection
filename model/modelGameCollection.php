@@ -115,4 +115,19 @@ function insertNewUser($mail, $firstName, $lastName, $pwd){
     $insertNewUserCommande->closeCursor();
 }
 
+function isItPlayerPassword($email, $pwd){
+    $emailAVerifier=htmlspecialchars($email);
+    $pwdAVerifier=htmlspecialchars($pwd);
+    $bdd = dbConnect();
+    $emailGamers = $bdd->query('SELECT * FROM JOUEUR WHERE Email_Joueur=\''.$email.'\'');
+    $returnEmailGamers = $emailGamers->fetchAll(PDO::FETCH_ASSOC);
+    if (count($returnEmailGamers)>0 AND $returnEmailGamers[0]["Mdp_Joueur"]===$pwdAVerifier){
+        return true;
+    }
+    return false;
+}
+
+
+
+
 ?>
