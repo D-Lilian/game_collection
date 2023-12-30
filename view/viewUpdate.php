@@ -31,10 +31,14 @@
             <button class="delete" name="delete" value="yes" type="submit">SUPPRIMER LE JEU DE MA BIBLIOTHEQUE</button>
         </form>
         <div class="image-container">
+            <a href="<?php echo $game[0]['Url_Site_Jeu']; ?>">
             <img src="<?php echo $game[0]['Url_Cover_Jeu']; ?>" alt="image de <?php echo $game[0]['Nom_Jeu']; ?>" class="side-image">
+            </a>
         </div>
     </div>
     <?php require('./assets/footer.php'); ?>
 </body>
 
 </html>
+
+

@@ -101,7 +101,7 @@ function insertLinkGamePlayer($emailPlayer, $idGame){
     $maxi = intval($returnNumberGamePlayer[0]["MAX(Numero_Jeu_Joueur)"]) + 1;
     $insertNewGameCommande = $bdd->prepare('INSERT INTO COLLECTION VALUES (:emailPlayer, :idGame, :maxi, 0)');
     $insertNewGameCommande->bindParam(':emailPlayer', $emailPlayer, PDO::PARAM_STR);
-    $insertNewGameCommande->bindParam(':idGame', intval($idGame), PDO::PARAM_INT);
+    $insertNewGameCommande->bindParam(':idGame', $idGame, PDO::PARAM_INT);
     $insertNewGameCommande->bindParam(':maxi', $maxi, PDO::PARAM_INT);
     $insertNewGameCommande->execute();
 }
@@ -111,7 +111,7 @@ function getGamePlayer($emailPlayer, $idGame){
     $bdd = dbConnect();
     $gamePlayerQuery = $bdd->prepare('SELECT * FROM JEU INNER JOIN COLLECTION ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE Email_Joueur = :emailPlayer AND JEU.Id_Jeu = :idGame');
     $gamePlayerQuery->bindParam(':emailPlayer', $emailPlayer, PDO::PARAM_STR);
-    $gamePlayerQuery->bindParam(':idGame', intval($idGame), PDO::PARAM_INT);
+    $gamePlayerQuery->bindParam(':idGame', $idGame, PDO::PARAM_INT);
     $gamePlayerQuery->execute();
     $returnGamePlayer = $gamePlayerQuery->fetchAll(PDO::FETCH_ASSOC);
     $gamePlayerQuery->closeCursor();
