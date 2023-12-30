@@ -1,35 +1,39 @@
 <?php
 require './model/modelGameCollection.php';
-
+function secure($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 session_start();
 $currentEmail=htmlspecialchars($_SESSION["Mail_Uti"]);
 $UserInformation=getGamerInformation($currentEmail);
-var_dump($UserInformation);
 $prenom = $UserInformation[0]["Prenom_Joueur"];
 $nom = $UserInformation[0]["Nom_Joueur"];
 require './view/viewProfil.php';
-
-
-
 if(isset($_POST["update"])){
-    if (isset($_POST['password']) && isset($_POST['confPassword'])) {
-        $password = $_POST['password'];
-        $confPassword = $_POST['confPassword'];
+    if (isset($_POST['password']) && isset($_POST['confPassword'])) {//secure
+        $password = secure($_POST['password']);
+        $confPassword = secure($_POST['confPassword']);
         if ($password == $confPassword) {
             $pwd = $password;
         } else {
             header('Location: index.php/profil');
         }
+    }else{
+        $pwd = $UserInformation[0]["Mdp_Joueur"];
     }
-
-
-    /*modele ($_POST["mail"],$_POST["lastName"],$_POST["firstName"],$pwd)*/
+    updatePlayer($_SESSION["Mail_Uti"], $prenom, $nom, $pwd);
     header('Location: profil');
 }
 
 if(isset($_POST["delete"])){
-    /*modele delete pwd avec mail en parametre*/ 
+    deletePlayer($_SESSION["Mail_Uti"]);
     header('Location: register');
+    
+    $_SESSION = array();
+    session_destroy();
 }
 
 if(isset($_POST["disconnect"])){
@@ -40,3 +44,6 @@ if(isset($_POST["disconnect"])){
     header('Location: login');
 }
 ?>
+
+
+$email = secure($_POST['email']);
