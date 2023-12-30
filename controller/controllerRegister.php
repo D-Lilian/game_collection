@@ -1,5 +1,7 @@
 <?php
 session_start();
+require './view/viewRegister.php';
+require("./model/modelGameCollection.php");
 
 function secure($data){
     $data = trim($data);
@@ -8,10 +10,7 @@ function secure($data){
     return $data;
 }
 if (isset($_POST['email'])){ 
-    
-    require("./model/modelGameCollection.php");
-
-    
+        
     $nom = $_POST['lastName'];
     $prenom = $_POST['firstName'];
     $Mail_Uti = $_POST['email'];
@@ -29,7 +28,7 @@ if (isset($_POST['email'])){
     if (isAPlayerInDataBase($Mail_Uti)){
     header('index.php/login');
     }else {
-        insertNewUser($prenom, $Mail_Uti, $pwd, $prenom)
+        insertNewUser($nom, $Mail_Uti, $pwd, $prenom);
         $_SESSION["Mail_Uti"]=$Mail_Uti;
         header('index.php/user');
     }

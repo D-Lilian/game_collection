@@ -100,4 +100,12 @@ function getTenBestPlayers(){
     return $returnTenBestGamers;
 }
 
+
+function insertNewUser($lastName, $mail, $mdp, $firstName)
+{
+    $bdd = dbConnect();
+    $insertNewUserCommande = "INSERT INTO joueur(Email_Joueur,Prenom_Joueur,Mdp_Joueur,Nom_Joueur) VALUES ($mail,$mdp,$lastName,$firstName);";
+    $bdd->query($insertNewUserCommande);
+}
+
 ?>
