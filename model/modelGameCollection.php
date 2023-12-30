@@ -57,7 +57,7 @@ function isAPlayerInDataBase($emailGamer){
     $returnGamerInformationQuery = $gamerInformationQuery->fetchAll(PDO::FETCH_ASSOC);
     $gamerInformationQuery->closeCursor();
 
-    if (count($returnAllGamerInformationQuery)>0){
+    if (count($returnGamerInformationQuery)>0){
         return true;
     }
     return false;

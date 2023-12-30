@@ -31,7 +31,7 @@ if (isset($_POST['email'])){
     }else {
         insertNewUser($Mail_Uti, $Prenom, $Nom,  $pwd);
         $_SESSION["Mail_Uti"]=$Mail_Uti;
-        header('Location: profil');    
+        header('Location: home');    
     }
 }
 
