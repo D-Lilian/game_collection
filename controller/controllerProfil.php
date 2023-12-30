@@ -46,4 +46,3 @@ if(isset($_POST["disconnect"])){
 ?>
 
 
-$email = secure($_POST['email']);
