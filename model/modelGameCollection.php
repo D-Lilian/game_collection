@@ -101,11 +101,18 @@ function getTenBestPlayers(){
 }
 
 
-function insertNewUser($lastName, $mail, $mdp, $firstName)
-{
+function insertNewUser($mail, $firstName, $lastName, $pwd){
     $bdd = dbConnect();
-    $insertNewUserCommande = "INSERT INTO joueur(Email_Joueur,Prenom_Joueur,Mdp_Joueur,Nom_Joueur) VALUES ($mail,$firstName,$lastName,$mdp);";
-    $bdd->query($insertNewUserCommande);
+    $query = 'INSERT INTO JOUEUR VALUES (:mail, :firstName, :lastName, :pwd)';
+    $insertNewUserCommande = $bdd->prepare($query);
+
+    $insertNewUserCommande->bindParam(':mail', $mail, PDO::PARAM_STR);
+    $insertNewUserCommande->bindParam(':firstName', $firstName, PDO::PARAM_STR);
+    $insertNewUserCommande->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+    $insertNewUserCommande->bindParam(':pwd', $pwd, PDO::PARAM_STR);
+
+    $insertNewUserCommande->execute();
+    $insertNewUserCommande->closeCursor();
 }
 
 ?>
