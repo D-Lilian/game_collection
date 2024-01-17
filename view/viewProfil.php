@@ -23,7 +23,7 @@
             <input class="text" type="text" name="firstName" value="<?php echo $prenom ?>" minlength=1
                 maxlength=100>
             <p class="info">Email :</p>
-            <input class="text" type="text" name="email" value="<?php echo $_SESSION["Mail_Uti"] ?>" minlength=1 maxlength=500>
+            <input class="text" type="text" name="email" value="<?php echo $_SESSION["Mail_Uti"] ?>" minlength=1 maxlength=500 readonly>
             <p class="info">Mot de passe :</p>
             <input class="text" type="password" name="password" minlength=1 maxlength=100>
             <p class="info">Confirmation du mot de passe :</p>
