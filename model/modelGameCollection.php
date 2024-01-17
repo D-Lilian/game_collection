@@ -139,11 +139,11 @@ function updateTimeGamePlayer($emailPlayer, $idGame, $nbHour) {
 }
 
 
-function getTenBestPlayers(){
+function getBestPlayers(){
     $bdd = dbConnect();
-    $tenBestGamers = $bdd->query('SELECT JOUEUR.Email_Joueur, Nom_Joueur, Prenom_Joueur, SUM(collection.Nb_Heure) AS TempsDeJeuTotal, (SELECT Nom_Jeu FROM COLLECTION INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE COLLECTION.Email_Joueur = JOUEUR.Email_Joueur ORDER BY COLLECTION.Nb_Heure DESC LIMIT 1) AS JeuPrefere FROM JOUEUR INNER JOIN COLLECTION ON COLLECTION.Email_Joueur = JOUEUR.Email_Joueur INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu GROUP BY JOUEUR.Email_Joueur, Nom_Joueur, Prenom_Joueur ORDER BY TempsDeJeuTotal DESC LIMIT 10;');
-    $returnTenBestGamers = $tenBestGamers->fetchAll(PDO::FETCH_ASSOC);
-    return $returnTenBestGamers;
+    $BestGamers = $bdd->query('SELECT JOUEUR.Email_Joueur, Nom_Joueur, Prenom_Joueur, SUM(collection.Nb_Heure) AS TempsDeJeuTotal, (SELECT Nom_Jeu FROM COLLECTION INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE COLLECTION.Email_Joueur = JOUEUR.Email_Joueur ORDER BY COLLECTION.Nb_Heure DESC LIMIT 1) AS JeuPrefere FROM JOUEUR INNER JOIN COLLECTION ON COLLECTION.Email_Joueur = JOUEUR.Email_Joueur INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu GROUP BY JOUEUR.Email_Joueur, Nom_Joueur, Prenom_Joueur ORDER BY TempsDeJeuTotal DESC LIMIT 20;');
+    $returnBestGamers = $BestGamers->fetchAll(PDO::FETCH_ASSOC);
+    return $returnBestGamers;
 }
 
 

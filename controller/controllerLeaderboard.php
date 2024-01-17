@@ -1,7 +1,7 @@
 <?php
 require './model/modelGameCollection.php';
 
-$bestPlayers=getTenBestPlayers();
+$bestPlayers=getBestPlayers();
 
 require './view/viewLeaderboard.php';
 ?>
