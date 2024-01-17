@@ -12,7 +12,7 @@
 
 <body>
     <?php require('./assets/header.php'); ?>
-    <<div class="flex-container">
+    <div class="flex-container">
         <?php if (isset($_POST["update"])) { ?>
             <form method="post">
             <h1 class="title">Mon profil</h1>
