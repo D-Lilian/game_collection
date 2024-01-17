@@ -1,0 +1,47 @@
+body,
+ul {
+    background: rgba(33, 31, 42, 1);
+    overflow: auto;
+    margin: 0;
+}
+
+.flex-container {
+    padding-left: 7%;
+    padding-right: 7%;
+    width: auto;
+    flex-grow: 1;
+    /* Permet au flex-container de prendre tout l'espace disponible */
+}
+
+.title {
+    font-weight: bolder;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 33.333%;
+}
+
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+table {
+    margin-bottom: 8%;
+    border-collapse: collapse;
+}
+
+#board tr:nth-child(even) {
+    background-color: rgba(43, 47, 64, 1);
+}
+
+#board tr:nth-child(odd) {
+    background-color: rgba(33, 31, 42, 1);
+}
