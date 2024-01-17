@@ -11,7 +11,7 @@
 
  function getAllGames($emailGamer){
      $bdd = dbConnect();
-     $query = 'SELECT * FROM JEU WHERE Id_Jeu NOT IN (SELECT Id_Jeu FROM COLLECTION WHERE Email_Joueur = :emailGamer)';
+     $query = 'SELECT * FROM JEU WHERE Id_Jeu NOT IN (SELECT Id_Jeu FROM COLLECTION WHERE Email_Joueur = :emailGamer) ORDER BY Nom_Jeu';
      $allGameQuery = $bdd->prepare($query);
      $allGameQuery->bindParam(':emailGamer', $emailGamer, PDO::PARAM_STR);
      $allGameQuery->execute();
@@ -23,7 +23,7 @@
 
  function getGamesWithSearch($emailGamer, $filter){
      $bdd = dbConnect();
-     $query = 'SELECT * FROM JEU WHERE Nom_Jeu LIKE :filter AND Id_Jeu NOT IN (SELECT Id_Jeu FROM COLLECTION WHERE Email_Joueur = :email)';
+     $query = 'SELECT * FROM JEU WHERE Nom_Jeu LIKE :filter AND Id_Jeu NOT IN (SELECT Id_Jeu FROM COLLECTION WHERE Email_Joueur = :email) ORDER BY Nom_Jeu';
      $allGameQuery = $bdd->prepare($query);
      $filterParam = '%' . $filter . '%';
      $allGameQuery->bindParam(':filter', $filterParam, PDO::PARAM_STR);
@@ -37,7 +37,7 @@
 
  function getGamesOfPlayer($emailGamer){
      $bdd = dbConnect();
-     $query = 'SELECT Nb_Heure, JEU.Id_Jeu, Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu FROM JOUEUR INNER JOIN COLLECTION ON JOUEUR.Email_Joueur = COLLECTION.Email_Joueur INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE JOUEUR.Email_Joueur = :emailGamer';
+     $query = 'SELECT Nb_Heure, JEU.Id_Jeu, Nom_Jeu, Editeur_Jeu, Plateforme_Jeu, Sortie_Jeu, Desc_Jeu, Url_Cover_Jeu, Url_Site_Jeu FROM JOUEUR INNER JOIN COLLECTION ON JOUEUR.Email_Joueur = COLLECTION.Email_Joueur INNER JOIN JEU ON COLLECTION.Id_Jeu = JEU.Id_Jeu WHERE JOUEUR.Email_Joueur = :emailGamer ORDER BY Nom_Jeu';
  
      $gamesOfPlayerQuery = $bdd->prepare($query);
      $gamesOfPlayerQuery->bindParam(':emailGamer', $emailGamer, PDO::PARAM_STR);
