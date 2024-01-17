@@ -21,7 +21,7 @@
             <p class="info"><?php echo $erreur?></p>
             <button class="button" type="submit">SE CONNECTER</button>
             <br>
-            <button class="button" name="register" value="yes" type="submit">S'inscrire</a>
+            <button class="button" name="register" id="register" value="yes" type="submit">S'inscrire</a>
         </form>
     </div>
     <?php require('./assets/footer.php'); ?>
