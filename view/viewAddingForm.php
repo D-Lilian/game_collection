@@ -44,7 +44,7 @@
             </label>
             <p class="info">Nintendo :</p>
             <label class="container">
-                <input class="checkbox" type="checkbox" name="switch">
+                <input class="checkbox" type="checkbox" name="nintendo">
                 <span class="checkmark"></span>
             </label>
             <p class="info">Mobile :</p>
